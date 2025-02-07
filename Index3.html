@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .navbar-custom {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .footer-dark {
+            background: black;
+            color: white;
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            padding: 4rem 2rem;
+        }
+        .hero-image {
+            flex: 1;
+            max-width: 45%;
+            height: 65vh;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero-text {
+            flex: 1;
+            padding-left: 50px;
+        }
+        .hero-reverse .hero-text {
+            padding-left: 0;
+            padding-right: 50px;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Dancing Script', cursive;
+        }
+        .hero-subtext {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Scroll Animation */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                max-width: 90%;
+                height: auto;
+                margin: 0 auto;
+            }
+            .hero-text {
+                padding-left: 0;
+                padding-top: 20px;
+            }
+        }
+        #grade1{
+            background: linear-gradient(180deg, #076585,#fff);
+        }
+        #grade2{
+            background: linear-gradient(180deg, #334d50,#cbcaa5);
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Background Video with Animated Text -->
+    <div class="position-relative vh-100">
+        <video class="position-absolute w-100 h-100 object-fit-cover" autoplay loop muted>
+            <source src="WhatsApp Video 2025-02-07 at 10.52.14_b1721752.mp4" type="video/mp4">
+        </video>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+        <!-- Video Text -->
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+            <h1 class="gradient-text hidden video-text">Discover Your Dream Escape</h1>
+            <p class="hero-subtext hidden video-text">Luxury cabins, breathtaking views, and unforgettable experiences.</p>
+        </div>
+    </div>
+
+    <!-- Hero Section (Image Left) -->
+    <section class="container hero-section grade" id="grade1">
+        <img src="heroo.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
+        <div class="hero-text">
+            <h1 class="gradient-text hidden scroll-reveal">Find Your Perfect Getaway</h1>
+            <p class="hero-subtext hidden scroll-reveal gradient-text">Book from the best cabins available worldwide.</p>
+            <button class="btn btn-primary mt-3">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- Hero Section Copy (Image Right) -->
+    <section class="container hero-section hero-reverse grade" id="grade2">
+        <div class="hero-text">
+            <h1 class="gradient-text hidden scroll-reveal">Your Next Adventure Awaits</h1>
+            <p class="hero-subtext hidden scroll-reveal gradient-text">Stay at the most stunning destinations with top-rated accommodations.</p>
+            <button class="btn btn-primary mt-3">Discover More</button>
+        </div>
+        <img src="heroo.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
+    </section>
+
+    <!-- Image Slider Section -->
+    <section class="container my-5">
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="300">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="1.jpg" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="2.jpg" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="3.jpg" class="d-block w-100" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="4.jpg" class="d-block w-100" alt="Image 4">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-4 footer-dark">
+        <p>&copy; 2025 Bootstrap Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        //dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+        }
+
+        // Video Text Animation (After 1.5 seconds)
+        setTimeout(() => {
+            document.querySelectorAll('.video-text').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 1500);
+        // Animation for Video Text
+        setTimeout(() => {
+            document.querySelectorAll('.video-text').forEach(el => el.classList.add('visible'));
+        }, 1500);
+
+        // Scroll Animation
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".scroll-reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
