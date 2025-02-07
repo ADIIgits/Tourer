@@ -9,8 +9,25 @@
     
     <style>
         .navbar-custom {
-            background: rgba(0, 0, 0, 0.5);
+            /* background: linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.229),transparent); */
+            background: rgba(15, 27, 47, 0.236);
+            backdrop-filter: blur(50px);
         }
+        .light
+        {
+            /* background: radial-gradient(#20002c,#cbb4d4) */
+            /* background: radial-gradient(#44a0a0,#092f37); */
+            background: radial-gradient(#f6e7d1,#ffffff);
+        }
+        .dark
+        {
+            background:linear-gradient(#0F2027,#203A43,#2C5364);
+        }
+        .light #grade1, .light #grade2
+        {
+            background-color: rgba(36, 34, 36, 0.055);
+        }
+        
         .footer-dark {
             background: black;
             color: white;
@@ -46,7 +63,17 @@
         .gradient-text {
             font-size: 3rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
+            /* background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1); */
+            background: linear-gradient(45deg,#da44538f,#ff008490);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Dancing Script', cursive;
+        }
+        .gradient-text2 {
+            font-size: 3rem;
+            font-weight: bold;
+            /* background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1); */
+            background: linear-gradient(45deg,#ff828fd0,#fd54abd7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'Dancing Script', cursive;
@@ -82,20 +109,42 @@
                 padding-top: 20px;
             }
         }
-        #grade1{
-            background: linear-gradient(180deg, #076585,#fff);
+        .grade
+        {
+            border-radius: 8px;
+        }
+        #grade1,#grade2{
+            /* background: linear-gradient(180deg, #076585,#fff); */
+            backdrop-filter: blur(50px);
+            background-color: rgba(255, 255, 255, 0.14);
+            /* background-color: rgba(255, 192, 203, 0.609); */
+            /* width: 100%; */
         }
         #grade2{
-            background: linear-gradient(180deg, #334d50,#cbcaa5);
+            /* background: linear-gradient(180deg, #334d50,#cbcaa5); */
+        }
+        #logor
+        {
+            height: 2em;
+            width: auto;
+        }
+        .buts
+        {
+            background: linear-gradient(130deg,#003a45d6,#004157da);
+            border: solid #135058 0.1px;
+        }
+        .rounder
+        {
+            border-radius: 16px ;
         }
     </style>
 </head>
-<body class="bg-light text-dark">
+<body class="light text-dark">
     
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom shadow-sm fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Logo</a>
+            <a class="navbar-brand text-white" href="#"><img src="sherpabgrem.png" alt="" id="logor"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -120,34 +169,36 @@
 
         <!-- Video Text -->
         <div class="position-absolute top-50 start-50 translate-middle text-center">
-            <h1 class="gradient-text hidden video-text">Discover Your Dream Escape</h1>
+            <h1 class="gradient-text2 hidden video-text">Discover Your Dream Escape</h1>
             <p class="hero-subtext hidden video-text">Luxury cabins, breathtaking views, and unforgettable experiences.</p>
         </div>
     </div>
 
     <!-- Hero Section (Image Left) -->
-    <section class="container hero-section grade" id="grade1">
-        <img src="heroo.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
-        <div class="hero-text">
-            <h1 class="gradient-text hidden scroll-reveal">Find Your Perfect Getaway</h1>
-            <p class="hero-subtext hidden scroll-reveal gradient-text">Book from the best cabins available worldwide.</p>
-            <button class="btn btn-primary mt-3">Explore Now</button>
-        </div>
-    </section>
+     <div class="container flex flex-col">
+        <section class="container hero-section grade w-100 m-3" id="grade1">
+            <img src="heroo.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
+            <div class="hero-text">
+                <h1 class="gradient-text hidden scroll-reveal">Find Your Perfect Getaway</h1>
+                <p class="hero-subtext hidden scroll-reveal gradient-text">Book from the best cabins available worldwide.</p>
+                <button class="btn btn-primary mt-3 buts">Explore Now</button>
+            </div>
+        </section>
 
-    <!-- Hero Section Copy (Image Right) -->
-    <section class="container hero-section hero-reverse grade" id="grade2">
-        <div class="hero-text">
-            <h1 class="gradient-text hidden scroll-reveal">Your Next Adventure Awaits</h1>
-            <p class="hero-subtext hidden scroll-reveal gradient-text">Stay at the most stunning destinations with top-rated accommodations.</p>
-            <button class="btn btn-primary mt-3">Discover More</button>
-        </div>
-        <img src="heroo.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
-    </section>
+        <!-- Hero Section Copy (Image Right) -->
+        <section class="container hero-section hero-reverse grade m-3" id="grade2">
+            <div class="hero-text">
+                <h1 class="gradient-text hidden scroll-reveal">Your Next Adventure Awaits</h1>
+                <p class="hero-subtext hidden scroll-reveal gradient-text">Stay at the most stunning destinations with top-rated accommodations.</p>
+                <button class="btn btn-primary mt-3 buts">Discover More</button>
+            </div>
+            <img src="heroo.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
+        </section>
+     </div>
 
     <!-- Image Slider Section -->
-    <section class="container my-5">
-        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="300">
+    <section class="container my-5 rounder">
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="500">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"></button>
@@ -155,7 +206,7 @@
                 <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3"></button>
             </div>
             
-            <div class="carousel-inner">
+            <div class="carousel-inner ">
                 <div class="carousel-item active">
                     <img src="1.jpg" class="d-block w-100" alt="Image 1">
                 </div>
@@ -187,8 +238,8 @@
     <script>
         //dark mode
         function toggleDarkMode() {
-            document.body.classList.toggle('bg-dark');
-            document.body.classList.toggle('text-light');
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
         }
 
         // Video Text Animation (After 1.5 seconds)
