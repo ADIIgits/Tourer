@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider with Transparent Header</title>
+    <link href="./output.css" rel="stylesheet">
+    
+</head>
+<body class="font-sans">
+    <div class="headersec">
+        <header class="header">
+            <h1 class="text-3xl font-bold">Explore the Beauty</h1>
+        </header>
+        
+        <div class="slider">
+            <div class="slide active"><img src="/images/bali1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="/images/bali2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="/images/bali3.jpg" alt="Image 3"></div>
+        </div>
+    </div>
+    
+    <div class="about">
+        <div class="diffuser">
+            <div class="diffuse">
+                
+            </div>
+        
+        </div>
+
+    </div>
+
+    
+    <script>
+        let index = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            slides.forEach(slide => slide.classList.remove("active"));
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+            setTimeout(showSlides, 5000);
+        }
+        document.addEventListener("DOMContentLoaded", showSlides);
+    </script>
+</body>
+</html>
