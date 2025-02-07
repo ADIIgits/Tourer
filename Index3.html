@@ -13,6 +13,25 @@
             background: rgba(15, 27, 47, 0.236);
             backdrop-filter: blur(50px);
         }
+        .nav-item
+        {
+            border-radius: 3px;
+            margin: 4px;
+        }
+        .nav-link:hover
+        {
+            
+            
+            background: linear-gradient(45deg,#f9e7b9,#f9d0be);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+           
+            
+        }
+        .btn
+        {
+            border: solid black 0px;
+        }
         .light
         {
             /* background: radial-gradient(#20002c,#cbb4d4) */
@@ -27,7 +46,14 @@
         {
             background-color: rgba(36, 34, 36, 0.055);
         }
-        
+        .dark .gradient-text
+        {
+            /* background: linear-gradient(45deg,#ff828fd0,#fd54abd7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Dancing Script', cursive; */
+            background-color: rgba(255, 251, 0, 0.803);
+        }
         .footer-dark {
             background: black;
             color: white;
@@ -150,10 +176,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link " href="guidespage.html" target="_blank">Guides</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#" target="_blank">Services</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#" target="_blank">Contact</a></li>
                 </ul>
             </div>
             <button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">🌙</button>

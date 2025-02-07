@@ -13,8 +13,28 @@
             --textcol: rgba(0, 0, 0, 0.78);
             --textcollight: rgba(251, 250, 250, 0.78);
         }
+        .nav-item
+        {
+            border-radius: 3px;
+            margin: 4px;
+        }
+        .nav-link:hover
+        {
+            
+            
+            background: linear-gradient(45deg,#f9e7b9,#f9d0be);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+           
+            
+        }
+        .btn
+        {
+            border: solid black 0px;
+        }
         .navbar-custom {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(15, 27, 47, 0.236);
+            backdrop-filter: blur(50px);
         }
         .footer-dark {
             background: black;
@@ -230,10 +250,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
             </div>
             <button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">🌙</button>
