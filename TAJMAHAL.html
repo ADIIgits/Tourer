@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .navbar-custom {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .footer-dark {
+            background: black;
+            color: white;
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            padding: 4rem 2rem;
+        }
+        .hero-image {
+            flex: 1;
+            max-width: 45%;
+            height: 65vh;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero-text {
+            flex: 1;
+            padding-left: 50px;
+        }
+        .hero-reverse .hero-text {
+            padding-left: 0;
+            padding-right: 50px;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Dancing Script', cursive;
+        }
+        .hero-subtext {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Scroll Animation */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                max-width: 90%;
+                height: auto;
+                margin: 0 auto;
+            }
+            .hero-text {
+                padding-left: 0;
+                padding-top: 20px;
+            }
+        }
+        #grade1{
+            background: linear-gradient(180deg, #076585,#fff);
+        }
+        #grade2{
+            background: linear-gradient(180deg, #334d50,#cbcaa5);
+        }
+
+        .gradient-heading {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff7eb3, #ff758c, #ffb199);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 30px;
+        }
+    
+        /* About Section Styling */
+        .about-text {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            color: #333;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Scroll Animation */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-heading {
+        font-size: 3rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff7eb3, #ff758c, #ffb199);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Dancing Script', cursive;
+        margin-bottom: 30px;
+    }
+
+    /* About Text with Gradient Background */
+    .about-text {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        color: #333;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+
+    /* Gradient Background Behind Image */
+    .image-gradient {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        width: 90%;
+        height: 80%;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        border-radius: 20px;
+        z-index: -1;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Taj Mahal Image */
+    .taj-image {
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.5s ease-in-out;
+    }
+    .taj-image:hover {
+        transform: scale(1.05);
+    }
+
+    /* Scroll Animation */
+    .hidden {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    </style>
+
+</head>
+<body class="bg-light text-dark">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Background Video with Animated Text -->
+    <div class="position-relative vh-100">
+        <video class="position-absolute w-100 h-100 object-fit-cover" autoplay loop muted>
+            <source src="taj.mp4" type="video/mp4">
+        </video>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+        <!-- Video Text -->
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+            <h1 class="gradient-text hidden video-text">Taj Mahal</h1>
+            <!-- <p class="hero-subtext hidden video-text"></p> -->
+        </div>
+    </div>
+
+  <!-- About Section Start  -->
+  <section id="about" class="py-5">
+    <div class="container">
+        <!-- Gradient Heading -->
+        <h1 class="text-center gradient-heading">About The Taj Mahal</h1>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="p-4 rounded shadow-lg about-text">
+                    <p>
+                        The Taj Mahal, one of the Seven Wonders of the World, is an architectural masterpiece built in the 17th century by Mughal Emperor Shah Jahan in memory of his beloved wife, Mumtaz Mahal. Located in Agra, India, this white marble mausoleum stands as a symbol of eternal love and beauty. 
+                    </p>
+                    <p>
+                        The monument is adorned with intricate carvings, calligraphy, and stunning gardens, attracting millions of visitors every year. Whether basking in the golden glow of sunrise or standing serenely under the moonlight, the Taj Mahal is a sight to behold.
+                        Built over two decades (1632–1653) by thousands of artisans under the supervision of chief architect Ustad Ahmad Lahauri, the Taj Mahal continues to inspire awe and admiration. It appears to change colors depending on the time of day—glowing pinkish at dawn, dazzling white at noon, and golden under the moonlight.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Carousel -->
+                <div id="tajCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="TAJMAP.png" class="d-block w-100 rounded shadow-lg" alt="Taj Mahal View 1">
+                    </div>
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#tajCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#tajCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- About Section End  -->
+    <!-- Footer -->
+    <footer class="text-center p-4 footer-dark">
+        <p>&copy; 2025 Sherpa. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        //dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('bg-dark');
+            document.body.classList.toggle('text-light');
+        }
+
+        // Video Text Animation (After 1.5 seconds)
+        setTimeout(() => {
+            document.querySelectorAll('.video-text').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 1500);
+        // Animation for Video Text
+        setTimeout(() => {
+            document.querySelectorAll('.video-text').forEach(el => el.classList.add('visible'));
+        }, 1500);
+
+        // Scroll Animation
+        window.addEventListener("scroll", () => {
+            document.querySelectorAll(".scroll-reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
