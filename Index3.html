@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Website</title>
+    <title>Sherpa.in</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         .navbar-custom {
-            /* background: linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.229),transparent); */
             background: rgba(15, 27, 47, 0.236);
             backdrop-filter: blur(50px);
         }
@@ -34,8 +33,7 @@
         }
         .light
         {
-            /* background: radial-gradient(#20002c,#cbb4d4) */
-            /* background: radial-gradient(#44a0a0,#092f37); */
+            
             background: radial-gradient(#f6e7d1,#ffffff);
         }
         .dark
@@ -53,6 +51,10 @@
             -webkit-text-fill-color: transparent;
             font-family: 'Dancing Script', cursive; */
             background-color: rgba(255, 251, 0, 0.803);
+        }
+        .dark .text-darker
+        {
+            color: rgba(255, 255, 255, 0.516);
         }
         .footer-dark {
             background: black;
@@ -89,16 +91,15 @@
         .gradient-text {
             font-size: 3rem;
             font-weight: bold;
-            /* background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1); */
             background: linear-gradient(45deg,#da44538f,#ff008490);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'Dancing Script', cursive;
+            
         }
         .gradient-text2 {
             font-size: 3rem;
             font-weight: bold;
-            /* background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1); */
             background: linear-gradient(45deg,#ff828fd0,#fd54abd7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -140,15 +141,12 @@
             border-radius: 8px;
         }
         #grade1,#grade2{
-            /* background: linear-gradient(180deg, #076585,#fff); */
+            
             backdrop-filter: blur(50px);
             background-color: rgba(255, 255, 255, 0.14);
-            /* background-color: rgba(255, 192, 203, 0.609); */
-            /* width: 100%; */
+           
         }
-        #grade2{
-            /* background: linear-gradient(180deg, #334d50,#cbcaa5); */
-        }
+        
         #logor
         {
             height: 2em;
@@ -163,6 +161,43 @@
         {
             border-radius: 10px ;
         }
+
+        .animated {
+            opacity: 0;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+    
+        .fadeInDown {
+            animation-name: fadeInDown;
+        }
+    
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+    
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        .carousel-item.active .animated {
+            opacity: 1;
+        }
+        .text-white
+        {
+            color: rgba(255, 255, 255, 0.846);
+        }
+        .text-darker
+        {
+            color: rgba(113, 24, 24, 0.662);
+        }
     </style>
 </head>
 <body class="light text-dark">
@@ -176,9 +211,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link " href="Index3.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link " href="guidespage.html" target="_blank">Guides</a></li>
-                    <li class="nav-item"><a class="nav-link " href="#" target="_blank">Services</a></li>
+                    <li class="nav-item"><a class="nav-link " href="aboutus.html" target="_blank">About</a></li>
                     <li class="nav-item"><a class="nav-link " href="#" target="_blank">Contact</a></li>
                 </ul>
             </div>
@@ -206,7 +241,7 @@
             <img src="heroo.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
             <div class="hero-text">
                 <h1 class="gradient-text hidden scroll-reveal">Find Your Perfect Getaway</h1>
-                <p class="hero-subtext hidden scroll-reveal gradient-text">Book from the best cabins available worldwide.</p>
+                <p class="hero-subtext hidden scroll-reveal text-darker">Book from the best cabins available worldwide.</p>
                 <button class="btn btn-primary mt-3 buts" onclick="clicked('taj')">Explore Now</button>
             </div>
         </section>
@@ -215,50 +250,56 @@
         <section class="container hero-section hero-reverse grade m-3" id="grade2">
             <div class="hero-text">
                 <h1 class="gradient-text hidden scroll-reveal">Your Next Adventure Awaits</h1>
-                <p class="hero-subtext hidden scroll-reveal gradient-text">Stay at the most stunning destinations with top-rated accommodations.</p>
+                <p class="hero-subtext hidden scroll-reveal text-darker">Stay at the most stunning destinations with top-rated accommodations.</p>
                 <button class="btn btn-primary mt-3 buts" onclick="clicked('kash')">Discover More</button>
             </div>
             <img src="kashmirimage.jpg" alt="Hero Image" class="hero-image hidden scroll-reveal">
         </section>
      </div>
+     
+     <h1 class="text-center gradient-text m-5">Gallery</h1>
 
-    <!-- Image Slider Section -->
-    <section class="container my-5 rounder">
-        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="500">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3"></button>
-            </div>
-            
-            <div class="carousel-inner rounder">
-                <div class="carousel-item active rounder">
-                    <img src="1.jpg" class="d-block w-100" alt="Image 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="2.jpg" class="d-block w-100" alt="Image 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="3.jpg" class="d-block w-100" alt="Image 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="bali1.jpg" class="d-block w-100" alt="Image 4">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="1.jpg" class="w-100 vh-100 object-fit-cover" alt="Slide 1">
+                <div class="overlay"></div>
+                <div class="carousel-caption text-start animated fadeInDown delay-1">
+                    <h1 class="cursive-text">Escape to Serenity</h1>
+                    <p class="text-white">Breathtaking views and luxurious comfort await.</p>
                 </div>
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="2.jpg" class="w-100 vh-100 object-fit-cover" alt="Slide 2">
+                <div class="overlay"></div>
+                <div class="carousel-caption text-start animated fadeInDown delay-1">
+                    <h1 class="cursive-text">Nature's Paradise</h1>
+                    <p class="text-white">Experience the beauty of the outdoors like never before.</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="3.jpg" class="w-100 vh-100 object-fit-cover" alt="Slide 3">
+                <div class="overlay"></div>
+                <div class="carousel-caption text-start animated fadeInDown delay-1">
+                    <h1 class="cursive-text">Unforgettable Moments</h1>
+                    <p class="text-white">Create lasting memories in a dream destination.</p>
+                </div>
+            </div>
         </div>
-    </section>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center p-4 footer-dark">
-        <p>&copy; 2025 Bootstrap Website. All Rights Reserved.</p>
+        <p>&copy; 2025 Sherpa.in. All Rights Reserved.</p>
         <div class="sociallinks">
             <img src="facebook.png" alt="" class="soc" height="50px" >
             <img src="instagram.png" alt="" class="soc" height="50px">

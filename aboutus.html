@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Trekking Adventures</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        /* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+    
+    background: linear-gradient(#34e89e,#0f3443);
+}
+
+/* Main content */
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background: rgba(27, 28, 51, 0.37);
+    backdrop-filter: blur(30px);
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 30px;
+    border-radius: 10px;
+   
+}
+
+h1 {
+    font-size: 36px;
+    color: #ede9e9;
+    font-family: "Trebuchet MS";
+    letter-spacing: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #f5f1f1c5;
+    font-family: "Trebuchet MS";
+    max-width: 80%;
+    text-align: center;
+   
+}
+
+/* Blob Container */
+.blob-container {
+    position: fixed;
+  
+    
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    z-index: 1;
+    overflow: hidden;
+    animation-name: rounder;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+@keyframes rounder {
+    0%{
+        transform:scale(1.2) translate(0px 0px);
+        /* transform: scale(0.7); */
+    }
+    50%{
+        transform:scale(1.6) translate(-20px 3px);
+        /* transform: scale(1.5); */
+    }
+    100%{
+        transform: scale(1.2) translate(0px 0px);
+        /* transform: scale(0.7); */
+    }
+}
+
+/* Styling for blobs */
+.blob {
+    position: absolute;
+    width: 1500px;
+    height: 1500px;
+    opacity: 0.7;
+    animation: float 8s infinite ease-in-out;
+}
+
+
+
+
+     </style>
+</head>
+<body>
+
+    <!-- Background container for blobs -->
+    <div class="blob-container">
+        <div id="blob1" class="blob">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fb4f1f;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#810a5f;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#0c001e;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <path fill="url(#gradient)" transform="translate(15,10) scale(0.3,0.3)">
+                <animate attributeName="d"
+                  dur="10500ms"
+                  repeatCount="indefinite"
+                  values="M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                  36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                  13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                  -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                  
+                  M32.1,-46.4C43,-36.3,54.1,-28.7,53.9,-19.8C53.8,-10.8,42.3,-0.4,
+                  34.6,7.4C26.8,15.3,22.8,20.5,17.6,23.4C12.5,26.2,6.2,26.8,-1.4,28.7C-9,30.6,
+                  -18,33.9,-24.1,31.3C-30.2,28.7,-33.5,20.3,-42.4,9.8C-51.3,-0.8,-65.9,-13.5,
+                  -65.4,-23.2C-65,-33,-49.4,-39.8,-36,-49.1C-22.6,-58.4,-11.3,-70.2,-0.3,-69.7C10.6,
+                  -69.3,21.2,-56.5,32.1,-46.4Z;
+                  
+                  M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                  36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                  13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                  -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;">
+                </animate>
+                <path/>
+            </svg>
+          </div>
+        <div id="blob1" class="blob">
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgb(94, 255, 0);stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:red;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:blue;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#gradient2)" transform="translate(25,10) scale(0.3,0.3)">
+                  <animate attributeName="d"
+                    dur="13500ms"
+                    repeatCount="indefinite"
+                    values="
+                    
+                    M32.1,-46.4C43,-36.3,54.1,-28.7,53.9,-19.8C53.8,-10.8,42.3,-0.4,
+                    34.6,7.4C26.8,15.3,22.8,20.5,17.6,23.4C12.5,26.2,6.2,26.8,-1.4,28.7C-9,30.6,
+                    -18,33.9,-24.1,31.3C-30.2,28.7,-33.5,20.3,-42.4,9.8C-51.3,-0.8,-65.9,-13.5,
+                    -65.4,-23.2C-65,-33,-49.4,-39.8,-36,-49.1C-22.6,-58.4,-11.3,-70.2,-0.3,-69.7C10.6,
+                    -69.3,21.2,-56.5,32.1,-46.4Z;
+                    
+                    
+                    M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                    36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                    13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                    -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                    
+                   
+                    
+                   
+                    
+                    M32.1,-46.4C43,-36.3,54.1,-28.7,53.9,-19.8C53.8,-10.8,42.3,-0.4,
+                    34.6,7.4C26.8,15.3,22.8,20.5,17.6,23.4C12.5,26.2,6.2,26.8,-1.4,28.7C-9,30.6,
+                    -18,33.9,-24.1,31.3C-30.2,28.7,-33.5,20.3,-42.4,9.8C-51.3,-0.8,-65.9,-13.5,
+                    -65.4,-23.2C-65,-33,-49.4,-39.8,-36,-49.1C-22.6,-58.4,-11.3,-70.2,-0.3,-69.7C10.6,
+                    -69.3,21.2,-56.5,32.1,-46.4Z;
+                    ">
+                  </animate>
+                  <path/>
+              </svg>
+          </div>
+        <div id="blob2" class="blob">
+            <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#40E0D0;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#FF8C00;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FF0080;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#gradient3)" transform="translate(0,10) scale(0.2,0.2)">
+                  <animate attributeName="d"
+                    dur="14900ms"
+                    repeatCount="indefinite"
+                    values="
+
+                    M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                    36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                    13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                    -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                    
+                    M32.1,-46.4C43,-36.3,54.1,-28.7,53.9,-19.8C53.8,-10.8,42.3,-0.4,
+                    34.6,7.4C26.8,15.3,22.8,20.5,17.6,23.4C12.5,26.2,6.2,26.8,-1.4,28.7C-9,30.6,
+                    -18,33.9,-24.1,31.3C-30.2,28.7,-33.5,20.3,-42.4,9.8C-51.3,-0.8,-65.9,-13.5,
+                    -65.4,-23.2C-65,-33,-49.4,-39.8,-36,-49.1C-22.6,-58.4,-11.3,-70.2,-0.3,-69.7C10.6,
+                    -69.3,21.2,-56.5,32.1,-46.4Z;
+                    
+                    
+                    M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                    36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                    13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                    -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                    
+                   
+                    
+                   
+                    
+                    M32.1,-46.4C43,-36.3,54.1,-28.7,53.9,-19.8C53.8,-10.8,42.3,-0.4,
+                    34.6,7.4C26.8,15.3,22.8,20.5,17.6,23.4C12.5,26.2,6.2,26.8,-1.4,28.7C-9,30.6,
+                    -18,33.9,-24.1,31.3C-30.2,28.7,-33.5,20.3,-42.4,9.8C-51.3,-0.8,-65.9,-13.5,
+                    -65.4,-23.2C-65,-33,-49.4,-39.8,-36,-49.1C-22.6,-58.4,-11.3,-70.2,-0.3,-69.7C10.6,
+                    -69.3,21.2,-56.5,32.1,-46.4Z;
+
+                    M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                    36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                    13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                    -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                    ">
+                  </animate>
+                  <path/>
+              </svg>
+          </div>
+        <div id="blob2" class="blob">
+            <svg viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#bf00bf;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#986705;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#020619;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#gradient4)" transform="translate(30,10) scale(0.2,0.2)">
+                  <animate attributeName="d"
+                    dur="19000ms"
+                    repeatCount="indefinite"
+                    values="
+
+                    M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                    36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                    13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                    -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                    
+                    M32.1,-46.4C43,-36.3,54.1,-28.7,53.9,-19.8C53.8,-10.8,42.3,-0.4,
+                    34.6,7.4C26.8,15.3,22.8,20.5,17.6,23.4C12.5,26.2,6.2,26.8,-1.4,28.7C-9,30.6,
+                    -18,33.9,-24.1,31.3C-30.2,28.7,-33.5,20.3,-42.4,9.8C-51.3,-0.8,-65.9,-13.5,
+                    -65.4,-23.2C-65,-33,-49.4,-39.8,-36,-49.1C-22.6,-58.4,-11.3,-70.2,-0.3,-69.7C10.6,
+                    -69.3,21.2,-56.5,32.1,-46.4Z;
+                    
+                    
+                    M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                    36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                    13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                    -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                    
+                   
+                    
+                   
+                    
+                    M32.1,-46.4C43,-36.3,54.1,-28.7,53.9,-19.8C53.8,-10.8,42.3,-0.4,
+                    34.6,7.4C26.8,15.3,22.8,20.5,17.6,23.4C12.5,26.2,6.2,26.8,-1.4,28.7C-9,30.6,
+                    -18,33.9,-24.1,31.3C-30.2,28.7,-33.5,20.3,-42.4,9.8C-51.3,-0.8,-65.9,-13.5,
+                    -65.4,-23.2C-65,-33,-49.4,-39.8,-36,-49.1C-22.6,-58.4,-11.3,-70.2,-0.3,-69.7C10.6,
+                    -69.3,21.2,-56.5,32.1,-46.4Z;
+
+                    M18.7,-40C20.5,-24.4,15.8,-14,18.5,-5.9C21.3,2.1,31.5,7.9,35.5,16.5C39.5,25,37.2,
+                    36.5,30.2,36.6C23.2,36.7,11.6,25.5,3.4,20.8C-4.8,16.1,-9.6,18,-10.3,15.8C-11.1,
+                    13.7,-7.7,7.6,-9.5,2.9C-11.3,-1.8,-18.2,-5,-20.1,-8.8C-21.9,-12.6,-18.7,-16.9,-14.5,
+                    -31.8C-10.3,-46.6,-5.2,-71.9,1.6,-74.1C8.4,-76.4,16.9,-55.6,18.7,-40Z;
+                    ">
+                  </animate>
+                  <path/>
+              </svg>
+          </div>
+        
+        
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>ABOUT US</h1>
+        <p id="para">Welcome to Sherpa, your ultimate travel companion for exploring breathtaking 
+            destinations with ease. We believe that every journey should be an adventure, 
+            and with Sherpa, planning one has never been easier. Our platform lets you browse through a 
+            variety of stunning locations, helping you choose the perfect spot for your next trip. 
+            But we go beyond just booking—we connect you with experienced guides who bring your journey to 
+            life, ensuring a safe, immersive, and unforgettable experience. Whether you’re 
+            trekking through majestic mountains or discovering hidden trails, 
+            Sherpa is here to guide your adventure, every step of the way.</p>
+    </div>
+
+</body>
+</html>
